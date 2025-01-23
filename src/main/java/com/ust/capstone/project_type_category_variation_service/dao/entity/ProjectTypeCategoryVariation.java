@@ -5,8 +5,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "project_type_category_variation")
 public class ProjectTypeCategoryVariation {
 
     @Id
@@ -18,7 +20,7 @@ public class ProjectTypeCategoryVariation {
     private String ProjTypCatVar_name;
 
     @Column(name = "project_type_category_variation_base_cost")
-    private float ProjTypCatVar_cost;
+    private double ProjTypCatVar_cost;
 
     @Column(name = "project_type_category_variation_img")
     private String ProjTypCatVar_img;
