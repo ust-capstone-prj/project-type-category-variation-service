@@ -1,19 +1,25 @@
 package com.ust.capstone.project_type_category_variation_service.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RestController;
 
 import com.ust.capstone.project_type_category_variation_service.dao.ProjectTypeCategoryVariationRepository;
 import com.ust.capstone.project_type_category_variation_service.dao.entity.ProjectTypeCategoryVariation;
-import com.ust.capstone.project_type_category_variation_service.pojo.ProjectCostPojo;
+//import com.ust.capstone.project_type_category_variation_service.pojo.ProjectCostPojo;
 
 @Service
 public class ProjectTypeCategoryVariationService {
 
     @Autowired
     private ProjectTypeCategoryVariationRepository projRepo;
+
+    public List<ProjectTypeCategoryVariation> getAllVariations() {
+        return projRepo.findAll();
+    }
 
     public ProjectTypeCategoryVariation getProjectVariation(Long id) {
         return projRepo.findById(id).orElse(null);

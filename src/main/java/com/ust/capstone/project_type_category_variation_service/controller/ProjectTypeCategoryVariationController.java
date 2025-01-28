@@ -1,5 +1,7 @@
 package com.ust.capstone.project_type_category_variation_service.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,25 +24,30 @@ public class ProjectTypeCategoryVariationController {
     @Autowired
     public ProjectTypeCategoryVariationService projService;
 
+    @GetMapping("/projectvar")
+    public ResponseEntity<List<ProjectTypeCategoryVariation>> getAllProjects() {
+        return new ResponseEntity<List<ProjectTypeCategoryVariation>>(projService.getAllVariations(), HttpStatus.OK);
+    }
+
     @GetMapping("/projectvar/{pid}")
     public ResponseEntity<ProjectTypeCategoryVariation> getProject(@PathVariable("pid") Long id) {
-        return new ResponseEntity(projService.getProjectVariation(id), HttpStatus.OK);
+        return new ResponseEntity<ProjectTypeCategoryVariation>(projService.getProjectVariation(id), HttpStatus.OK);
     }
 
     @PostMapping("/projectvar")
     public ResponseEntity<ProjectTypeCategoryVariation> addProject(@RequestBody ProjectTypeCategoryVariation newProj) {
-        return new ResponseEntity(projService.addProjectVariation(newProj), HttpStatus.OK);
+        return new ResponseEntity<ProjectTypeCategoryVariation>(projService.addProjectVariation(newProj), HttpStatus.OK);
     }
 
     @PutMapping("/projectvar")
     public ResponseEntity<ProjectTypeCategoryVariation> updateProject(
             @RequestBody ProjectTypeCategoryVariation updatedProj) {
-        return new ResponseEntity(projService.updateProjectVariation(updatedProj), HttpStatus.OK);
+        return new ResponseEntity<ProjectTypeCategoryVariation>(projService.updateProjectVariation(updatedProj), HttpStatus.OK);
     }
 
     @DeleteMapping("/projectvar/{pid}")
     public ResponseEntity<Void> deleteProject(@PathVariable("pid") Long id) {
         projService.deleteProjectVariation(id);
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }
