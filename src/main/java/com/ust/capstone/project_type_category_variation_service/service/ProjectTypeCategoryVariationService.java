@@ -4,12 +4,18 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.ust.capstone.project_type_category_variation_service.dao.ProjectTypeCategoryVariationRepository;
 import com.ust.capstone.project_type_category_variation_service.dao.entity.ProjectTypeCategoryVariation;
+import com.ust.capstone.project_type_category_variation_service.pojo.ProjectCostPojo;
+import com.ust.capstone.project_type_category_variation_service.pojo.VariationAndCostPojo;
 
 @Service
 public class ProjectTypeCategoryVariationService {
+
+    @Autowired
+    RestTemplate restTemplate;
 
     @Autowired
     private ProjectTypeCategoryVariationRepository projRepo;
@@ -37,6 +43,31 @@ public class ProjectTypeCategoryVariationService {
     public void deleteProjectVariation(Long id) {
         projRepo.deleteById(id);
     }
+
+    public VariationAndCostPojo getProjectCostByVarId(Long id) {
+        ProjectTypeCategoryVariation variation = projRepo.findById(id).orElse(null);
+        ProjectCostPojo costPojo = restTemplate.getForObject("http://localhost:1515/projectcosts/variation/" + id, ProjectCostPojo.class);
+        //private Long projTypCatVarId;
+        // private String projTypCatVarName;
+        // private double projTypCatVarCost;
+        // private String projTypCatVarImg;
+        // private String projTypCatVarDesc;
+        // private ProjectCostPojo projectCostPojo;
+        VariationAndCostPojo variationAndCostPojo = new VariationAndCostPojo(
+            variation.getProjTypCatVarId(),
+            variation.getProjTypCatVarName(),
+            variation.getProjTypCatVarCost(),
+            variation.getProjTypCatVarImg(),
+            variation.getProjTypCatVarDesc(),
+            costPojo
+        );
+        System.out.println(variationAndCostPojo);
+        return variationAndCostPojo;
+
+
+
+    }
+    
 
     
 }
