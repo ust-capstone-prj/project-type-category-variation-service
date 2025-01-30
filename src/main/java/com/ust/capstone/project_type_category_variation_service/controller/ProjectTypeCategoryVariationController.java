@@ -34,6 +34,14 @@ public class ProjectTypeCategoryVariationController {
         return new ResponseEntity<ProjectTypeCategoryVariation>(projService.getProjectVariation(id), HttpStatus.OK);
     }
 
+    @GetMapping("/projectvar/category/{projectCategoryId}")
+    public ResponseEntity<ProjectTypeCategoryVariation> getProjectVariationByCatogoryId(Long catId){
+        return new ResponseEntity<ProjectTypeCategoryVariation>(projService.getProjectVariationByCatogoryId(catId),HttpStatus.OK);
+    }
+    
+
+
+
     @PostMapping("/projectvar")
     public ResponseEntity<ProjectTypeCategoryVariation> addProject(@RequestBody ProjectTypeCategoryVariation newProj) {
         return new ResponseEntity<ProjectTypeCategoryVariation>(projService.addProjectVariation(newProj), HttpStatus.OK);

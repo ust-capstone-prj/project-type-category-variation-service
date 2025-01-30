@@ -8,4 +8,6 @@ import com.ust.capstone.project_type_category_variation_service.dao.entity.Proje
 @Repository
 public interface ProjectTypeCategoryVariationRepository extends JpaRepository<ProjectTypeCategoryVariation, Long> {
 
+    ProjectTypeCategoryVariation findByProjTypCatId(Long id);
+
 }

@@ -22,6 +22,9 @@ public class ProjectTypeCategoryVariationService {
         return projRepo.findById(id).orElse(null);
     }
 
+    public ProjectTypeCategoryVariation getProjectVariationByCatogoryId(Long catId){
+        return projRepo.findByProjTypCatId(catId);
+    }
     public ProjectTypeCategoryVariation addProjectVariation(ProjectTypeCategoryVariation newVariation) {
         System.out.println(newVariation);
         return projRepo.saveAndFlush(newVariation);
