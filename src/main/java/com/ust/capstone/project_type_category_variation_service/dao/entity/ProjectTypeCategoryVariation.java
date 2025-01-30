@@ -36,12 +36,6 @@ public class ProjectTypeCategoryVariation {
     @Column(name = "variation_desc")
     private String ProjTypCatVarDesc;
 
-    @Column(name = "project_type_category_Id")
+    @Column(name = "project_type_category_id")
     private Long ProjTypCatId;
-
-    // One-to-One relationship with the cost breakdown
-    // @OneToOne(mappedBy = "projectTypeCategoryVariation", cascade =
-    // CascadeType.ALL, fetch = FetchType.LAZY)
-    // private ProjectCost costBreakdown;
-    // create pojo
 }
