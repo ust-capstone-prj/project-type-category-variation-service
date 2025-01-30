@@ -28,7 +28,7 @@ public class ProjectTypeCategoryVariationService {
         return projRepo.findById(id).orElse(null);
     }
 
-    public ProjectTypeCategoryVariation getProjectVariationByCatogoryId(Long catId){
+    public List<ProjectTypeCategoryVariation> getProjectVariationByCatogoryId(Long catId){
         return projRepo.findByProjTypCatId(catId);
     }
     public ProjectTypeCategoryVariation addProjectVariation(ProjectTypeCategoryVariation newVariation) {
@@ -46,7 +46,7 @@ public class ProjectTypeCategoryVariationService {
 
     public VariationAndCostPojo getProjectCostByVarId(Long id) {
         ProjectTypeCategoryVariation variation = projRepo.findById(id).orElse(null);
-        ProjectCostPojo costPojo = restTemplate.getForObject("http://localhost:1515/projectcosts/variation/" + id, ProjectCostPojo.class);
+        ProjectCostPojo costPojo = restTemplate.getForObject("http://localhost:1515/api/projectcosts/variation/" + id, ProjectCostPojo.class);
         //private Long projTypCatVarId;
         // private String projTypCatVarName;
         // private double projTypCatVarCost;

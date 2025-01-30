@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ust.capstone.project_type_category_variation_service.dao.entity.ProjectTypeCategoryVariation;
+import com.ust.capstone.project_type_category_variation_service.pojo.VariationAndCostPojo;
 import com.ust.capstone.project_type_category_variation_service.service.ProjectTypeCategoryVariationService;
 
 @RestController
@@ -35,12 +36,9 @@ public class ProjectTypeCategoryVariationController {
     }
 
     @GetMapping("/projectvar/category/{projectCategoryId}")
-    public ResponseEntity<ProjectTypeCategoryVariation> getProjectVariationByCatogoryId(Long catId){
-        return new ResponseEntity<ProjectTypeCategoryVariation>(projService.getProjectVariationByCatogoryId(catId),HttpStatus.OK);
+    public ResponseEntity<List<ProjectTypeCategoryVariation>> getProjectVariationByCategoryId(@PathVariable("projectCategoryId") Long catId){
+        return new ResponseEntity<List<ProjectTypeCategoryVariation>>(projService.getProjectVariationByCatogoryId(catId),HttpStatus.OK);
     }
-    
-
-
 
     @PostMapping("/projectvar")
     public ResponseEntity<ProjectTypeCategoryVariation> addProject(@RequestBody ProjectTypeCategoryVariation newProj) {
@@ -57,5 +55,10 @@ public class ProjectTypeCategoryVariationController {
     public ResponseEntity<Void> deleteProject(@PathVariable("pid") Long id) {
         projService.deleteProjectVariation(id);
         return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
+    @GetMapping("/projectvar/costs/{projectCategoryId}")
+    public ResponseEntity<VariationAndCostPojo> getProjectCostByVarId(@PathVariable("projectCategoryId") Long catId){
+        return new ResponseEntity<VariationAndCostPojo>(projService.getProjectCostByVarId(catId),HttpStatus.OK);
     }
 }
