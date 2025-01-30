@@ -1,6 +1,7 @@
 package com.ust.capstone.project_type_category_variation_service.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,9 +29,10 @@ public class ProjectTypeCategoryVariationService {
         return projRepo.findById(id).orElse(null);
     }
 
-    public List<ProjectTypeCategoryVariation> getProjectVariationByCatogoryId(Long catId){
+    public List<ProjectTypeCategoryVariation> getProjectVariationByCatogoryId(Long catId) {
         return projRepo.findByProjTypCatId(catId);
     }
+
     public ProjectTypeCategoryVariation addProjectVariation(ProjectTypeCategoryVariation newVariation) {
         System.out.println(newVariation);
         return projRepo.saveAndFlush(newVariation);
@@ -46,28 +48,41 @@ public class ProjectTypeCategoryVariationService {
 
     public VariationAndCostPojo getProjectCostByVarId(Long id) {
         ProjectTypeCategoryVariation variation = projRepo.findById(id).orElse(null);
-        ProjectCostPojo costPojo = restTemplate.getForObject("http://localhost:1515/api/projectcosts/variation/" + id, ProjectCostPojo.class);
-        //private Long projTypCatVarId;
+        ProjectCostPojo costPojo = restTemplate.getForObject("http://localhost:1515/api/projectcosts/variation/" + id,
+                ProjectCostPojo.class);
+        // private Long projTypCatVarId;
         // private String projTypCatVarName;
         // private double projTypCatVarCost;
         // private String projTypCatVarImg;
         // private String projTypCatVarDesc;
         // private ProjectCostPojo projectCostPojo;
         VariationAndCostPojo variationAndCostPojo = new VariationAndCostPojo(
-            variation.getProjTypCatVarId(),
-            variation.getProjTypCatVarName(),
-            variation.getProjTypCatVarCost(),
-            variation.getProjTypCatVarImg(),
-            variation.getProjTypCatVarDesc(),
-            costPojo
-        );
+                variation.getProjTypCatVarId(),
+                variation.getProjTypCatVarName(),
+                variation.getProjTypCatVarCost(),
+                variation.getProjTypCatVarImg(),
+                variation.getProjTypCatVarDesc(),
+                costPojo);
         System.out.println(variationAndCostPojo);
         return variationAndCostPojo;
-
-
-
     }
-    
 
-    
+    public List<VariationAndCostPojo> getProjectsByCategoryId(Long projTypCatId) {
+        List<ProjectTypeCategoryVariation> variations = projRepo.findByProjTypCatId(projTypCatId);
+
+        return variations.stream().map(variation -> {
+            ProjectCostPojo costPojo = restTemplate.getForObject("http://localhost:1515/api/projectcosts/variation/" + projTypCatId,ProjectCostPojo.class);
+            // ProjectCostPojo costPojo = projectCostRepository.findByProjTypCatVarId(variation.getProjTypCatVarId())
+            //         .orElse(new ProjectCostPojo(variation.getProjTypCatVarId(), 0.0, 0.0, 0.0));
+            
+            return new VariationAndCostPojo(
+                    variation.getProjTypCatVarId(),
+                    variation.getProjTypCatVarName(),
+                    variation.getProjTypCatVarCost(),
+                    variation.getProjTypCatVarImg(),
+                    variation.getProjTypCatVarDesc(),
+                    costPojo);
+        }).collect(Collectors.toList());
+    }
+
 }

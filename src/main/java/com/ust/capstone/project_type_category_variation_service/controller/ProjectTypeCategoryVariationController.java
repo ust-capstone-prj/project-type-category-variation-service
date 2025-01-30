@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ust.capstone.project_type_category_variation_service.dao.entity.ProjectTypeCategoryVariation;
 import com.ust.capstone.project_type_category_variation_service.pojo.VariationAndCostPojo;
 import com.ust.capstone.project_type_category_variation_service.service.ProjectTypeCategoryVariationService;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/api")
@@ -61,4 +63,10 @@ public class ProjectTypeCategoryVariationController {
     public ResponseEntity<VariationAndCostPojo> getProjectCostByVarId(@PathVariable("projectCategoryId") Long catId){
         return new ResponseEntity<VariationAndCostPojo>(projService.getProjectCostByVarId(catId),HttpStatus.OK);
     }
+
+    @GetMapping("/projectvar/newcosts/{projectCategoryId}")
+    public ResponseEntity<List<VariationAndCostPojo>> getProjectCostByVarId2(@PathVariable("projectCategoryId") Long catId){
+        return new ResponseEntity<List<VariationAndCostPojo>>(projService.getProjectsByCategoryId(catId),HttpStatus.OK);
+    }
+    
 }
