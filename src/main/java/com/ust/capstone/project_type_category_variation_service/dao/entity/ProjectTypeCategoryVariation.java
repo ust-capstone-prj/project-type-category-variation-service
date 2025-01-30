@@ -22,20 +22,20 @@ public class ProjectTypeCategoryVariation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "variation_id")
-    private Long ProjTypCatVarId;
+    private Long projTypCatVarId;
 
     @Column(name = "variation_name")
-    private String ProjTypCatVarName;
+    private String projTypCatVarName;
 
     @Column(name = "variation_basecost")
-    private double ProjTypCatVarCost;
+    private double projTypCatVarCost;
 
     @Column(name = "variation_img")
-    private String ProjTypCatVarImg;
+    private String projTypCatVarImg;
 
     @Column(name = "variation_desc")
-    private String ProjTypCatVarDesc;
+    private String projTypCatVarDesc;
 
     @Column(name = "project_type_category_id")
-    private Long ProjTypCatId;
+    private Long projTypCatId;
 }
