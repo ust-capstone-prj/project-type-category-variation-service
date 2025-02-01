@@ -71,10 +71,10 @@ public class ProjectTypeCategoryVariationService {
         List<ProjectTypeCategoryVariation> variations = projRepo.findByProjTypCatId(projTypCatId);
 
         return variations.stream().map(variation -> {
-            ProjectCostPojo costPojo = restTemplate.getForObject("http://localhost:1515/api/projectcosts/variation/" + projTypCatId,ProjectCostPojo.class);
-            // ProjectCostPojo costPojo = projectCostRepository.findByProjTypCatVarId(variation.getProjTypCatVarId())
-            //         .orElse(new ProjectCostPojo(variation.getProjTypCatVarId(), 0.0, 0.0, 0.0));
-            
+            ProjectCostPojo costPojo = restTemplate.getForObject(
+                    "http://localhost:1515/api/projectcosts/variation/" + variation.getProjTypCatVarId(),
+                    ProjectCostPojo.class);
+            System.out.println("\n\n\nProjectCostPojo: " + costPojo);
             return new VariationAndCostPojo(
                     variation.getProjTypCatVarId(),
                     variation.getProjTypCatVarName(),

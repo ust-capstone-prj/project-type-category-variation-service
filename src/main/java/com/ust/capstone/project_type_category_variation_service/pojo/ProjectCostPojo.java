@@ -16,10 +16,10 @@ import lombok.NoArgsConstructor;
 public class ProjectCostPojo {
 
     // private Long ProjTypCatCostBreakdown_id;
-    private Long ProjTypCatVarId;
-    private double ProfitCost;
-    private double LabourCost;
-    private double MaterialCost;
+    private Long projTypCatVarId;
+    private double profitCost;
+    private double labourCost;
+    private double materialCost;
 
     // // mapping
     // @OneToOne
