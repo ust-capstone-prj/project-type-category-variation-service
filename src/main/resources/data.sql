@@ -1,4 +1,4 @@
--- Insert data into project_type_category_variation
+-- Insert data into project_type_category_variation (Painting Designs)
 INSERT INTO project_type_category_variation (variation_name, variation_basecost, variation_img, variation_desc, project_type_category_id) 
 VALUES 
 ('Ocean Breeze', 1000.00, 'https://www.zhooshpaints.com/cdn/shop/files/Ocean_breeze_3.jpg', 'A calming blend of soft blues and whites, designed to evoke the feeling of the ocean.', 3),
@@ -7,3 +7,23 @@ VALUES
 ('Geometric Glow', 800.00, 'https://www.decorpot.com/images/blogimage7159281triangular-designs.jpg', 'A sleek, modern design with sharp geometric shapes and neon colors, creating a futuristic vibe.', 3),
 ('Rustic Charm', 1100.00, 'https://media.designcafe.com/wp-content/uploads/2020/07/20195323/rustic-wall-paint-colors-for-your-home.jpg', 'A warm, earthy design with brown, beige, and terracotta tones, mimicking rustic charm.', 3),
 ('Abstract Waves', 1300.00, 'https://m.media-amazon.com/images/I/91V0a9l4kRL.jpg', 'A bold design featuring smooth, flowing wave-like patterns in shades of blue, teal, and black.', 3);
+
+-- Insert data into project_type_category_variation (Ceiling Designs)
+INSERT INTO project_type_category_variation (variation_name, variation_basecost, variation_img, variation_desc, project_type_category_id) 
+VALUES 
+('Classic Tray Ceiling', 1500.00, 'https://www.exampleimageurl.com/classic_tray_ceiling.jpg', 'This design features an elegant tray ceiling with crown molding and ambient lighting, adding depth and sophistication to any room.', 2),
+('Geometric Ceiling Design', 1000.00, 'https://www.exampleimageurl.com/geometric_ceiling_design.jpg', 'A bold design with geometric patterns, combining straight lines and sharp angles for a modern and artistic look.', 2),
+('Coffered Ceiling', 2000.00, 'https://www.exampleimageurl.com/coffered_ceiling.jpg', 'A luxurious design featuring a grid of beams creating a coffered look, adding a sense of elegance and grandeur to the room.', 2),
+('Skylight Ceiling', 1800.00, 'https://www.exampleimageurl.com/skylight_ceiling.jpg', 'A stunning design with built-in skylights to allow natural light to flood the room, offering a refreshing and airy atmosphere.', 2),
+('Wooden Panel Ceiling', 1300.00, 'https://www.exampleimageurl.com/wooden_panel_ceiling.jpg', 'A warm, natural design using wooden panels arranged in a sleek and contemporary pattern, perfect for rustic or modern homes.', 2);
+
+-- Insert data into project_type_category_variation (Lighting Designs)
+INSERT INTO project_type_category_variation (variation_name, variation_basecost, variation_img, variation_desc, project_type_category_id) 
+VALUES 
+('Chandeliers', 2500.00, 'https://www.exampleimageurl.com/chandeliers.jpg', 'Elegant crystal chandeliers that add a touch of luxury and sophistication to any room, ideal for dining rooms or large entryways.', 1),
+('Recessed LED Lighting', 1200.00, 'https://www.exampleimageurl.com/recessed_led_lighting.jpg', 'A minimalist and modern design featuring recessed LED lights, perfect for providing subtle, ambient lighting for any space.', 1),
+('Pendant Lights', 1500.00, 'https://www.exampleimageurl.com/pendant_lights.jpg', 'Stylish pendant lights that hang from the ceiling, available in various designs to match modern or industrial interiors.', 1),
+('Track Lighting', 1300.00, 'https://www.exampleimageurl.com/track_lighting.jpg', 'Flexible track lighting systems that allow you to adjust the direction of the lights to highlight artwork or other features of a room.', 1),
+('Smart LED Ceiling Lights', 2200.00, 'https://www.exampleimageurl.com/smart_led_ceiling_lights.jpg', 'High-tech LED ceiling lights with adjustable color and brightness, perfect for creating customized lighting moods throughout the room.', 1),
+('Floor Lamps', 800.00, 'https://www.exampleimageurl.com/floor_lamps.jpg', 'Versatile and stylish floor lamps, providing both ambient and task lighting, available in various materials and designs.', 1);
+
