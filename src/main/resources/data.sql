@@ -11,16 +11,16 @@ VALUES
 -- Insert data into project_type_category_variation (Ceiling Designs)
 INSERT INTO project_type_category_variation (variation_name, variation_basecost, variation_img, variation_desc, project_type_category_id) 
 VALUES 
-('Classic Tray Ceiling', 1500.00, 'https://www.exampleimageurl.com/classic_tray_ceiling.jpg', 'This design features an elegant tray ceiling with crown molding and ambient lighting, adding depth and sophistication to any room.', 2),
-('Geometric Ceiling Design', 1000.00, 'https://www.exampleimageurl.com/geometric_ceiling_design.jpg', 'A bold design with geometric patterns, combining straight lines and sharp angles for a modern and artistic look.', 2),
-('Coffered Ceiling', 2000.00, 'https://www.exampleimageurl.com/coffered_ceiling.jpg', 'A luxurious design featuring a grid of beams creating a coffered look, adding a sense of elegance and grandeur to the room.', 2),
-('Skylight Ceiling', 1800.00, 'https://www.exampleimageurl.com/skylight_ceiling.jpg', 'A stunning design with built-in skylights to allow natural light to flood the room, offering a refreshing and airy atmosphere.', 2),
-('Wooden Panel Ceiling', 1300.00, 'https://www.exampleimageurl.com/wooden_panel_ceiling.jpg', 'A warm, natural design using wooden panels arranged in a sleek and contemporary pattern, perfect for rustic or modern homes.', 2);
+('Classic Tray Ceiling', 1500.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9MRPMff0AdNKOhqUZwiqscHlauNtFQkDifw&s', 'This design features an elegant tray ceiling with crown molding and ambient lighting, adding depth and sophistication to any room.', 2),
+('Geometric Ceiling Design', 1000.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHttzB6yLeupuIic6cixT5jZcHiUXXImDrOg&s', 'A bold design with geometric patterns, combining straight lines and sharp angles for a modern and artistic look.', 2),
+('Coffered Ceiling', 2000.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjW6rQlhPz7WtKeMe53wox24xVZul15pBu_A&s', 'A luxurious design featuring a grid of beams creating a coffered look, adding a sense of elegance and grandeur to the room.', 2),
+('Skylight Ceiling', 1800.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuq8806MIqvu_w7ukXl26D6hqa6vsP4KcBMg&s', 'A stunning design with built-in skylights to allow natural light to flood the room, offering a refreshing and airy atmosphere.', 2),
+('Wooden Panel Ceiling', 1300.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNfbhTHL7jmWj3CHM2Q4gkB5e1kgNPoW4DhA&s', 'A warm, natural design using wooden panels arranged in a sleek and contemporary pattern, perfect for rustic or modern homes.', 2);
 
 -- Insert data into project_type_category_variation (Lighting Designs)
 INSERT INTO project_type_category_variation (variation_name, variation_basecost, variation_img, variation_desc, project_type_category_id) 
 VALUES 
-('Chandeliers', 2500.00, 'https://www.exampleimageurl.com/chandeliers.jpg', 'Elegant crystal chandeliers that add a touch of luxury and sophistication to any room, ideal for dining rooms or large entryways.', 1),
+('Chandeliers', 2500.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdnUsHNziKDBk1kZoxiiyhMgAWL1Vn4z03eA&s', 'Elegant crystal chandeliers that add a touch of luxury and sophistication to any room, ideal for dining rooms or large entryways.', 1),
 ('Recessed LED Lighting', 1200.00, 'https://www.exampleimageurl.com/recessed_led_lighting.jpg', 'A minimalist and modern design featuring recessed LED lights, perfect for providing subtle, ambient lighting for any space.', 1),
 ('Pendant Lights', 1500.00, 'https://www.exampleimageurl.com/pendant_lights.jpg', 'Stylish pendant lights that hang from the ceiling, available in various designs to match modern or industrial interiors.', 1),
 ('Track Lighting', 1300.00, 'https://www.exampleimageurl.com/track_lighting.jpg', 'Flexible track lighting systems that allow you to adjust the direction of the lights to highlight artwork or other features of a room.', 1),
